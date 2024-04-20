@@ -32,7 +32,7 @@ public class ButtonScriptAnimals : MonoBehaviour
 
     public void OnMouseExit()
     {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>(); //gaaa//
         if (sprite != null)
         {
             sprite.color = Color.white;
