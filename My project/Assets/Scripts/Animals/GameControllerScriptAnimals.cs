@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameControllerScriptAnimals : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class GameControllerScriptAnimals : MonoBehaviour
 
     public const float Xspace = 3f;
     public const float Yspace = -3f;
+
+    public TextMeshProUGUI victoryText;
 
     [SerializeField] private MainImageScriptAnimals startObject;
     [SerializeField] private Sprite[] images;
@@ -79,7 +83,7 @@ public class GameControllerScriptAnimals : MonoBehaviour
     }
     public void imageOpened(MainImageScriptAnimals startObject)
     {
-        if(firstOpen == null)
+        if (firstOpen == null)
         {
             firstOpen = startObject;
         }
@@ -92,10 +96,16 @@ public class GameControllerScriptAnimals : MonoBehaviour
 
     private IEnumerator CheckGuessed()
     {
-        if(firstOpen.spriteId == secondOpen.spriteId) //Compares the two objects
+        victoryText.gameObject.SetActive(false);
+        if (firstOpen.spriteId == secondOpen.spriteId) //Compares the two objects
         {
             score++; //Add score
             scoreText.text = "Score: " + score;
+
+            if (score == 6)
+            {
+                victoryText.gameObject.SetActive(true);
+            }
         }
         else
         {
@@ -117,3 +127,4 @@ public class GameControllerScriptAnimals : MonoBehaviour
         SceneManager.LoadScene("Animals");
     }
 }
+
