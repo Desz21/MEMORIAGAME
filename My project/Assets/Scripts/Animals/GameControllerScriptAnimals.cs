@@ -9,6 +9,7 @@ public class GameControllerScriptAnimals : MonoBehaviour
 {
     public const int columns = 6;
     public const int rows = 2;
+    public const int scoremmax = (columns * rows) / 2;
 
     public const float Xspace = 3f;
     public const float Yspace = -3f;
@@ -102,7 +103,7 @@ public class GameControllerScriptAnimals : MonoBehaviour
             score++; //Add score
             scoreText.text = "Score: " + score;
 
-            if (score == 6)
+            if (score == scoremmax)
             {
                 victoryText.gameObject.SetActive(true);
             }

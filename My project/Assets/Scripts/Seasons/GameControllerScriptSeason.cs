@@ -7,6 +7,7 @@ public class GameControllerScriptSeasons : MonoBehaviour
 {
     public const int columns = 4;
     public const int rows = 2;
+    public const int scoremmax = (columns * rows) / 2;
 
     public const float Xspace = 3f;
     public const float Yspace = -3f;

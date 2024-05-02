@@ -7,6 +7,7 @@ public class GameControllerScriptDaysOfTheWeek : MonoBehaviour
 {
     public const int columns = 7;
     public const int rows = 2;
+    public const int scoremmax = (columns * rows) / 2;
 
     public const float Xspace = 2.5f;
     public const float Yspace = -3.2f;
