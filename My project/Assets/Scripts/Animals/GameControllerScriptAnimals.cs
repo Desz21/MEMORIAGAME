@@ -13,10 +13,15 @@ public class GameControllerScriptAnimals : MonoBehaviour
     public const float Xspace = 3f;
     public const float Yspace = -3f;
 
+    public const int MaxScore = columns * rows / 2;
+
     public TextMeshProUGUI victoryText;
 
     [SerializeField] private MainImageScriptAnimals startObject;
     [SerializeField] private Sprite[] images;
+    [SerializeField] private Button nextButton;  // Reference to the 'next' button
+    [SerializeField] private Button backButton;  // Reference to the 'back' button
+    [SerializeField] private Button mainMenuButton;  // Reference to the 'back' button
 
     private int[] Randomiser(int[] locations)
     {
@@ -63,6 +68,9 @@ public class GameControllerScriptAnimals : MonoBehaviour
                 gameImage.transform.position = new Vector3(positionX, positionY, startPosition.z);
             }
         }
+        victoryText.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
+        backButton.gameObject.SetActive(true);  // Show 'back' button
     }
 
     private MainImageScriptAnimals firstOpen;
@@ -96,7 +104,6 @@ public class GameControllerScriptAnimals : MonoBehaviour
 
     private IEnumerator CheckGuessed()
     {
-        victoryText.gameObject.SetActive(false);
         if (firstOpen.spriteId == secondOpen.spriteId) //Compares the two objects
         {
             score++; //Add score
@@ -105,6 +112,7 @@ public class GameControllerScriptAnimals : MonoBehaviour
             if (score == 6)
             {
                 victoryText.gameObject.SetActive(true);
+                nextButton.gameObject.SetActive(true);  // Show 'next' button
             }
         }
         else
@@ -121,10 +129,30 @@ public class GameControllerScriptAnimals : MonoBehaviour
         firstOpen = null;
         secondOpen = null;
     }
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(6); // Change to the actual name of your next level scene
+    }
+
+    public void LoadPreviousLevel()
+    {
+        SceneManager.LoadScene(4); // Change to the actual name of your previous level scene
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(10); // Change to the actual name of your previous level scene
+    }
+
+    void Awake()
+    {
+        nextButton.onClick.AddListener(LoadNextLevel);  // Attach event listener for 'next'
+        backButton.onClick.AddListener(LoadPreviousLevel);  // Attach event listener for 'back'
+        mainMenuButton.onClick.AddListener(ReturnToMainMenu);  // Attach event listener for 'Return to Main Menu'
+    }
 
     public void Restart()
     {
         SceneManager.LoadScene("Animals");
     }
 }
-

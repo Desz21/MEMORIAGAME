@@ -512,6 +512,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e342ae5d9749cba4c85b4e3ebcab0757, type: 3}
   - {fileID: 21300000, guid: b3e50cdf6e15a6b46b7646a899683392, type: 3}
   - {fileID: 21300000, guid: 102c7ba76d9699b409d661fa7f48756d, type: 3}
+  nextButton: {fileID: 1612882996}
+  backButton: {fileID: 323942376}
+  mainMenuButton: {fileID: 1171277213}
   scoreText: {fileID: 13792271}
   attemptsText: {fileID: 1625271569}
 --- !u!1 &323942374
@@ -550,8 +553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -250, y: 29}
-  m_SizeDelta: {x: 1.7929, y: 0.3362}
+  m_AnchoredPosition: {x: -250, y: 9}
+  m_SizeDelta: {x: 1.8, y: 0.34}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &323942376
 MonoBehaviour:
@@ -596,19 +599,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 323942377}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 855732180}
-        m_TargetAssemblyTypeName: LogicaCambiarNivel, Assembly-CSharp
-        m_MethodName: CambiarNivel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &323942377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,7 +1587,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -19, y: -22}
-  m_SizeDelta: {x: 1.7769, y: 0.3331}
+  m_SizeDelta: {x: 1.3, y: 0.2}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1171277213
 MonoBehaviour:
@@ -1641,19 +1632,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1171277214}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 855732180}
-        m_TargetAssemblyTypeName: LogicaCambiarNivel, Assembly-CSharp
-        m_MethodName: CambiarNivel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1171277214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,7 +1842,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -42, y: 9}
-  m_SizeDelta: {x: 1.9977, y: 0.3746}
+  m_SizeDelta: {x: 1.8, y: 0.34}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1612882996
 MonoBehaviour:
@@ -1908,19 +1887,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1612882997}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 855732180}
-        m_TargetAssemblyTypeName: LogicaCambiarNivel, Assembly-CSharp
-        m_MethodName: CambiarNivel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1612882997
 MonoBehaviour:
   m_ObjectHideFlags: 0
