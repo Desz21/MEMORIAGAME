@@ -257,7 +257,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d4d6d079dd12c2545b1e6c4686356fbb, type: 3}
   - {fileID: 21300000, guid: 07271e33ca1492046a9abc7841ccea09, type: 3}
   nextButton: {fileID: 1237434296}
-  backButton: {fileID: 0}
   mainMenuButton: {fileID: 1034522621}
   scoreText: {fileID: 13792271}
   attemptsText: {fileID: 1625271569}
@@ -1028,8 +1027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33, y: -30}
-  m_SizeDelta: {x: 1.9908, y: 0.3733}
+  m_AnchoredPosition: {x: -24, y: -29}
+  m_SizeDelta: {x: 1.9324, y: 0.3623}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1034522621
 MonoBehaviour:

@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c51af8df2abcb4ea6ab7ec178eda51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryImage: {fileID: 0}
+  victoryImage: {fileID: 194357635}
   startObject: {fileID: 1162072863}
   images:
   - {fileID: 21300000, guid: 0899e0b03707f824494ad624dc687b32, type: 3}
@@ -378,9 +378,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 641e11f957f7dff40a68e298dd7cd99a, type: 3}
   - {fileID: 21300000, guid: 864f97dd634522246aece9f9c6c3346e, type: 3}
   - {fileID: 21300000, guid: 2d1b4ad2d1fa49a4891eaa568aac54d4, type: 3}
-  nextButton: {fileID: 0}
-  backButton: {fileID: 0}
-  mainMenuButton: {fileID: 0}
+  nextButton: {fileID: 325934355}
+  backButton: {fileID: 323942376}
+  mainMenuButton: {fileID: 1171277213}
   scoreText: {fileID: 13792271}
   attemptsText: {fileID: 1625271569}
 --- !u!1 &194357633
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ac3d0952c25bc584cba67a82840cf778, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1782,8 +1782,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -19, y: -22}
-  m_SizeDelta: {x: 1.7769, y: 0.3331}
+  m_AnchoredPosition: {x: -24, y: -29}
+  m_SizeDelta: {x: 1.9324, y: 0.3623}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1171277213
 MonoBehaviour:

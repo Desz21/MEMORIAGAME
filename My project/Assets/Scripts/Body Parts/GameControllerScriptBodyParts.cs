@@ -66,6 +66,10 @@ public class GameControllerScriptBodyParts : MonoBehaviour
                 gameImage.transform.position = new Vector3(positionX, positionY, startPosition.z);
             }
         }
+        victoryImage.gameObject.SetActive(false); //New change for images for victory
+        //victoryText.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
+        backButton.gameObject.SetActive(true);  // Show 'back' button
     }
 
     private MainImageScriptBodyParts firstOpen;
