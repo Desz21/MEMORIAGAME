@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameControllerScriptDaysOfTheWeek : MonoBehaviour
 {
@@ -10,10 +12,14 @@ public class GameControllerScriptDaysOfTheWeek : MonoBehaviour
     public const int scoremmax = (columns * rows) / 2;
 
     public const float Xspace = 2.5f;
-    public const float Yspace = -3.2f;
+    public const float Yspace = -3f;
 
+    [SerializeField] private Image victoryImage;
     [SerializeField] private MainImageScriptDaysOfTheWeek startObject;
     [SerializeField] private Sprite[] images;
+    [SerializeField] private Button nextButton;  // Reference to the 'next' button
+    [SerializeField] private Button backButton;  // Reference to the 'back' button
+    [SerializeField] private Button mainMenuButton;  // Reference to the 'back' button
 
     private int[] Randomiser(int[] locations)
     {
@@ -97,6 +103,13 @@ public class GameControllerScriptDaysOfTheWeek : MonoBehaviour
         {
             score++; //Add score
             scoreText.text = "Score: " + score;
+
+            if (score == scoremmax)
+            {
+                victoryImage.gameObject.SetActive(true); // New change for images
+                //victoryText.gameObject.SetActive(true);
+                nextButton.gameObject.SetActive(true);  // Show 'next' button
+            }
         }
         else
         {
@@ -111,6 +124,28 @@ public class GameControllerScriptDaysOfTheWeek : MonoBehaviour
 
         firstOpen = null;
         secondOpen = null;
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(12); // Change to the actual name of your next level scene
+    }
+
+    public void LoadPreviousLevel()
+    {
+        SceneManager.LoadScene(9); // Change to the actual name of your previous level scene
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(1); // Change to the actual name of your previous level scene
+    }
+
+    void Awake()
+    {
+        nextButton.onClick.AddListener(LoadNextLevel);  // Attach event listener for 'next'
+        backButton.onClick.AddListener(LoadPreviousLevel);  // Attach event listener for 'back'
+        mainMenuButton.onClick.AddListener(ReturnToMainMenu);  // Attach event listener for 'Return to Main Menu'
     }
 
     public void Restart()

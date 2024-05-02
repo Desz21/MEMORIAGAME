@@ -11,12 +11,11 @@ public class GameControllerScriptAnimals : MonoBehaviour
     public const int rows = 2;
     public const int scoremmax = (columns * rows) / 2;
 
-    public const float Xspace = 3f;
+    public const float Xspace = 2.5f;
     public const float Yspace = -3f;
 
-    public const int MaxScore = columns * rows / 2;
-
-    public TextMeshProUGUI victoryText;
+    [SerializeField] private Image victoryImage;
+    //public TextMeshProUGUI victoryText;
 
     [SerializeField] private MainImageScriptAnimals startObject;
     [SerializeField] private Sprite[] images;
@@ -69,7 +68,8 @@ public class GameControllerScriptAnimals : MonoBehaviour
                 gameImage.transform.position = new Vector3(positionX, positionY, startPosition.z);
             }
         }
-        victoryText.gameObject.SetActive(false);
+        victoryImage.gameObject.SetActive(false); //New change for images for victory
+        //victoryText.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(true);  // Show 'back' button
     }
@@ -112,7 +112,8 @@ public class GameControllerScriptAnimals : MonoBehaviour
 
             if (score == scoremmax)
             {
-                victoryText.gameObject.SetActive(true);
+                victoryImage.gameObject.SetActive(true); // New change for images
+                //victoryText.gameObject.SetActive(true);
                 nextButton.gameObject.SetActive(true);  // Show 'next' button
             }
         }
@@ -132,17 +133,17 @@ public class GameControllerScriptAnimals : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(6); // Change to the actual name of your next level scene
+        SceneManager.LoadScene(7); // Change to the actual name of your next level scene
     }
 
     public void LoadPreviousLevel()
     {
-        SceneManager.LoadScene(4); // Change to the actual name of your previous level scene
+        SceneManager.LoadScene(5); // Change to the actual name of your previous level scene
     }
 
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene(10); // Change to the actual name of your previous level scene
+        SceneManager.LoadScene(1); // Change to the actual name of your previous level scene
     }
 
     void Awake()

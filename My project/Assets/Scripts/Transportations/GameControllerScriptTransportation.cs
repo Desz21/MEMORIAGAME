@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameControllerScriptTransportation : MonoBehaviour
 {
@@ -12,8 +14,12 @@ public class GameControllerScriptTransportation : MonoBehaviour
     public const float Xspace = 2.5f;
     public const float Yspace = -3f;
 
+    [SerializeField] private Image victoryImage;
     [SerializeField] private MainImageScriptTransportation startObject;
     [SerializeField] private Sprite[] images;
+    [SerializeField] private Button nextButton;  // Reference to the 'next' button
+    [SerializeField] private Button backButton;  // Reference to the 'back' button 
+    [SerializeField] private Button mainMenuButton;  // Reference to the 'back' button
 
     private int[] Randomiser(int[] locations)
     {
@@ -60,6 +66,9 @@ public class GameControllerScriptTransportation : MonoBehaviour
                 gameImage.transform.position = new Vector3(positionX, positionY, startPosition.z);
             }
         }
+        victoryImage.gameObject.SetActive(false); //New change for images for victory
+        nextButton.gameObject.SetActive(false);
+        backButton.gameObject.SetActive(true);  // Show 'back' button
     }
 
     private MainImageScriptTransportation firstOpen;
@@ -97,6 +106,13 @@ public class GameControllerScriptTransportation : MonoBehaviour
         {
             score++; //Add score
             scoreText.text = "Score: " + score;
+
+            if (score == scoremmax)
+            {
+                victoryImage.gameObject.SetActive(true); // New change for images
+                //victoryText.gameObject.SetActive(true);
+                nextButton.gameObject.SetActive(true);  // Show 'next' button
+            }
         }
         else
         {
@@ -112,7 +128,27 @@ public class GameControllerScriptTransportation : MonoBehaviour
         firstOpen = null;
         secondOpen = null;
     }
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(6); // Change to the actual name of your next level scene
+    }
 
+    public void LoadPreviousLevel()
+    {
+        SceneManager.LoadScene(4); // Change to the actual name of your previous level scene
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(1); // Change to the actual name of your previous level scene
+    }
+
+    void Awake()
+    {
+        nextButton.onClick.AddListener(LoadNextLevel);  // Attach event listener for 'next'
+        backButton.onClick.AddListener(LoadPreviousLevel);  // Attach event listener for 'back'
+        mainMenuButton.onClick.AddListener(ReturnToMainMenu);  // Attach event listener for 'Return to Main Menu'
+    }
     public void Restart()
     {
         SceneManager.LoadScene("Transportation");

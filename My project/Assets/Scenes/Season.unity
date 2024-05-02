@@ -302,19 +302,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120835102}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1792593680}
-        m_TargetAssemblyTypeName: LogicaCambiarNivel, Assembly-CSharp
-        m_MethodName: CambiarNivel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &120835102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,12 +385,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90693dc2ff031e40aa424c72afcfc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victoryImage: {fileID: 334438874}
   startObject: {fileID: 562399614}
   images:
   - {fileID: 21300000, guid: 7e52336521de9ea4984df6b68fd9df4d, type: 3}
   - {fileID: 21300000, guid: cd63f61e08917cc4d9520aa7569d79b1, type: 3}
   - {fileID: 21300000, guid: 6181fbc62de82fd4fbbb22603e097abe, type: 3}
   - {fileID: 21300000, guid: 01ae01d5c29624f4489e35fcd3114ab0, type: 3}
+  nextButton: {fileID: 1367358472}
+  backButton: {fileID: 687768299}
+  mainMenuButton: {fileID: 120835101}
   scoreText: {fileID: 13792271}
   attemptsText: {fileID: 1625271569}
 --- !u!1 &198043435
@@ -622,6 +614,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218928987}
+  m_CullTransparentMesh: 1
+--- !u!1 &334438872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334438873}
+  - component: {fileID: 334438875}
+  - component: {fileID: 334438874}
+  m_Layer: 5
+  m_Name: Victory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &334438873
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334438872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1150293838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &334438874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334438872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ac3d0952c25bc584cba67a82840cf778, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &334438875
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334438872}
   m_CullTransparentMesh: 1
 --- !u!1 &354724848
 GameObject:
@@ -1185,19 +1252,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 687768300}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1792593680}
-        m_TargetAssemblyTypeName: LogicaCambiarNivel, Assembly-CSharp
-        m_MethodName: CambiarNivel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &687768300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,6 +1540,7 @@ RectTransform:
   - {fileID: 1367358471}
   - {fileID: 687768298}
   - {fileID: 120835100}
+  - {fileID: 334438873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1742,19 +1798,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367358473}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1792593680}
-        m_TargetAssemblyTypeName: LogicaCambiarNivel, Assembly-CSharp
-        m_MethodName: CambiarNivel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1367358473
 MonoBehaviour:
   m_ObjectHideFlags: 0
