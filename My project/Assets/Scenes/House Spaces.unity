@@ -501,11 +501,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 174394550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23fa1ea784577140960aadaa28dca02, type: 3}
+  m_Script: {fileID: 11500000, guid: 01860b56b6ef5574e87dd153e33a3e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   victoryImage: {fileID: 305604771}
-  startObject: {fileID: 1162072861}
+  startObject: {fileID: 1162072863}
   images:
   - {fileID: 21300000, guid: 644045094bd33a94a92a9c0848cb51d1, type: 3}
   - {fileID: 21300000, guid: 8d73e05b378ae3849bd3272c5b22512c, type: 3}
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa76ed2c4284234c88d2fd42dd80fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 174394553}
+  gameController: {fileID: 0}
   functionOnClick: Restart
 --- !u!1 &993961747
 GameObject:
@@ -1490,7 +1490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162072860}
   - component: {fileID: 1162072859}
-  - component: {fileID: 1162072861}
+  - component: {fileID: 1162072863}
   - component: {fileID: 1162072862}
   m_Layer: 0
   m_Name: main_image
@@ -1567,20 +1567,6 @@ Transform:
   - {fileID: 993961748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1162072861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162072858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b65ab3ff956e7945ad0b9e3b386a898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image_unknown: {fileID: 993961747}
-  gameController: {fileID: 174394553}
 --- !u!61 &1162072862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1626,6 +1612,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.44, y: 10.39}
   m_EdgeRadius: 0
+--- !u!114 &1162072863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162072858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6bb906e28297045928824ea621905d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image_unknown: {fileID: 993961747}
+  gameController: {fileID: 174394553}
 --- !u!1 &1171277211
 GameObject:
   m_ObjectHideFlags: 0

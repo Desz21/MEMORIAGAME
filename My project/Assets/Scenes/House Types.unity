@@ -460,64 +460,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &174394550
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 174394552}
-  - component: {fileID: 174394553}
-  m_Layer: 0
-  m_Name: GameControler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &174394552
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174394550}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30176836, y: 0.16300732, z: -9.955091}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &174394553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174394550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23fa1ea784577140960aadaa28dca02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  victoryImage: {fileID: 305604771}
-  startObject: {fileID: 1162072861}
-  images:
-  - {fileID: 21300000, guid: 426923b52b96cd94bb3cd6dae0190d97, type: 3}
-  - {fileID: 21300000, guid: 9792c4a34f2044147a5b45723dc28098, type: 3}
-  - {fileID: 21300000, guid: 94d39e77a7b4c5d44bb6ff908e4fbc91, type: 3}
-  - {fileID: 21300000, guid: 04e227cb51726ee4491f9226679364e1, type: 3}
-  - {fileID: 21300000, guid: 27c7e30f6b33e584fbaa184ac81e392f, type: 3}
-  - {fileID: 21300000, guid: 7866c522932fccb4d8665588c1c6fbd3, type: 3}
-  nextButton: {fileID: 1612882996}
-  backButton: {fileID: 323942376}
-  mainMenuButton: {fileID: 1171277213}
-  scoreText: {fileID: 13792271}
-  attemptsText: {fileID: 1625271569}
 --- !u!1 &305604769
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +845,64 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &707260546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707260548}
+  - component: {fileID: 707260547}
+  m_Layer: 0
+  m_Name: GameControler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &707260547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707260546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe28704295efcf440bb3c9feca61fefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victoryImage: {fileID: 305604771}
+  startObject: {fileID: 1162072863}
+  images:
+  - {fileID: 21300000, guid: 426923b52b96cd94bb3cd6dae0190d97, type: 3}
+  - {fileID: 21300000, guid: 9792c4a34f2044147a5b45723dc28098, type: 3}
+  - {fileID: 21300000, guid: 94d39e77a7b4c5d44bb6ff908e4fbc91, type: 3}
+  - {fileID: 21300000, guid: 04e227cb51726ee4491f9226679364e1, type: 3}
+  - {fileID: 21300000, guid: 27c7e30f6b33e584fbaa184ac81e392f, type: 3}
+  - {fileID: 21300000, guid: 7866c522932fccb4d8665588c1c6fbd3, type: 3}
+  nextButton: {fileID: 1612882996}
+  backButton: {fileID: 323942376}
+  mainMenuButton: {fileID: 1171277213}
+  scoreText: {fileID: 13792271}
+  attemptsText: {fileID: 1625271569}
+--- !u!4 &707260548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707260546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1427.6583, y: 238.8741, z: 7.7712674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855732178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa76ed2c4284234c88d2fd42dd80fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 174394553}
+  gameController: {fileID: 0}
   functionOnClick: Restart
 --- !u!1 &993961747
 GameObject:
@@ -1490,7 +1490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162072860}
   - component: {fileID: 1162072859}
-  - component: {fileID: 1162072861}
+  - component: {fileID: 1162072863}
   - component: {fileID: 1162072862}
   m_Layer: 0
   m_Name: main_image
@@ -1567,20 +1567,6 @@ Transform:
   - {fileID: 993961748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1162072861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162072858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b65ab3ff956e7945ad0b9e3b386a898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image_unknown: {fileID: 993961747}
-  gameController: {fileID: 174394553}
 --- !u!61 &1162072862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1626,6 +1612,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.44, y: 10.39}
   m_EdgeRadius: 0
+--- !u!114 &1162072863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162072858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae6aa2aad9020849a9983b987e97677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image_unknown: {fileID: 993961747}
+  gameController: {fileID: 707260547}
 --- !u!1 &1171277211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,7 +2392,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 13792273}
   - {fileID: 1625271571}
-  - {fileID: 174394552}
+  - {fileID: 707260548}
   - {fileID: 1071660502}
   - {fileID: 1162072860}
   - {fileID: 1631982606}
