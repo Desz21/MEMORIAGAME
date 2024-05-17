@@ -9,7 +9,7 @@ public class GameControllerScriptAnimals : MonoBehaviour
 {
     public const int columns = 6;
     public const int rows = 2;
-    public const int scoremmax = (columns * rows) / 2;
+    public const int scoremax = (columns * rows) / 2;
 
     public const float Xspace = 2.5f;
     public const float Yspace = -3f;
@@ -134,8 +134,9 @@ public class GameControllerScriptAnimals : MonoBehaviour
             score++; //Add score
             scoreText.text = "Score: " + score;
 
-            if (score == scoremmax)
+            if (score == scoremax)
             {
+                MusicManager.Instance.PlayVictoryMusic();
                 victoryImage.gameObject.SetActive(true); // New change for images
                 //victoryText.gameObject.SetActive(true);
                 nextButton.gameObject.SetActive(true);  // Show 'next' button
@@ -155,18 +156,25 @@ public class GameControllerScriptAnimals : MonoBehaviour
         firstOpen = null;
         secondOpen = null;
     }
+
     public void LoadNextLevel()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene(7); // Change to the actual name of your next level scene
     }
 
     public void LoadPreviousLevel()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene(5); // Change to the actual name of your previous level scene
     }
 
     public void ReturnToMainMenu()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene(1); // Change to the actual name of your previous level scene
     }
 
@@ -179,6 +187,8 @@ public class GameControllerScriptAnimals : MonoBehaviour
 
     public void Restart()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene("Animals");
     }
 }

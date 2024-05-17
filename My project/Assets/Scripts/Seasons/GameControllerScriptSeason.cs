@@ -109,6 +109,7 @@ public class GameControllerScriptSeasons : MonoBehaviour
 
             if (score == scoremmax)
             {
+                MusicManager.Instance.PlayVictoryMusic();
                 victoryImage.gameObject.SetActive(true); // New change for images
                 //victoryText.gameObject.SetActive(true);
                 nextButton.gameObject.SetActive(true);  // Show 'next' button
@@ -131,16 +132,22 @@ public class GameControllerScriptSeasons : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene(4); // Change to the actual name of your next level scene
     }
 
     public void LoadPreviousLevel()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene(2); // Change to the actual name of your previous level scene
     }
 
     public void ReturnToMainMenu()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene(1); // Change to the actual name of your previous level scene
     }
 
@@ -153,6 +160,8 @@ public class GameControllerScriptSeasons : MonoBehaviour
 
     public void Restart()
     {
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene("Season");
     }
 }
