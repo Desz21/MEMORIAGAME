@@ -15,11 +15,15 @@ public class GameControllerScriptTransportation : MonoBehaviour
     public const float Yspace = -3f;
 
     [SerializeField] private Image victoryImage;
+    //public TextMeshProUGUI victoryText;
+
     [SerializeField] private MainImageScriptTransportation startObject;
     [SerializeField] private Sprite[] images;
     [SerializeField] private Button nextButton;  // Reference to the 'next' button
     [SerializeField] private Button backButton;  // Reference to the 'back' button 
     [SerializeField] private Button mainMenuButton;  // Reference to the 'back' button
+
+    private List<MainImageScriptTransportation> allCards = new List<MainImageScriptTransportation>();
 
     private int[] Randomiser(int[] locations)
     {
@@ -64,11 +68,34 @@ public class GameControllerScriptTransportation : MonoBehaviour
                 float positionY = (Yspace * j) + startPosition.y;
 
                 gameImage.transform.position = new Vector3(positionX, positionY, startPosition.z);
+
+                allCards.Add(gameImage); // Add card to the list
             }
         }
+
+        StartCoroutine(ShowCardsTemporarily()); // Start coroutine to show cards temporarily
         victoryImage.gameObject.SetActive(false); //New change for images for victory
+        //victoryText.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(true);  // Show 'back' button
+    }
+
+    private IEnumerator ShowCardsTemporarily()
+    {
+        // Show all cards
+        foreach (var card in allCards)
+        {
+            card.Open();
+        }
+
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3);
+
+        // Hide all cards
+        foreach (var card in allCards)
+        {
+            card.Close();
+        }
     }
 
     private MainImageScriptTransportation firstOpen;
@@ -129,6 +156,7 @@ public class GameControllerScriptTransportation : MonoBehaviour
         firstOpen = null;
         secondOpen = null;
     }
+
     public void LoadNextLevel()
     {
         MusicManager.Instance.StopVictoryMusic();
@@ -156,6 +184,7 @@ public class GameControllerScriptTransportation : MonoBehaviour
         backButton.onClick.AddListener(LoadPreviousLevel);  // Attach event listener for 'back'
         mainMenuButton.onClick.AddListener(ReturnToMainMenu);  // Attach event listener for 'Return to Main Menu'
     }
+
     public void Restart()
     {
         MusicManager.Instance.StopVictoryMusic();

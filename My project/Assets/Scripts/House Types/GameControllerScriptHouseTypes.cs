@@ -23,6 +23,8 @@ public class GameControllerScriptHouseTypes : MonoBehaviour
     [SerializeField] private Button backButton;  // Reference to the 'back' button
     [SerializeField] private Button mainMenuButton;  // Reference to the 'back' button
 
+    private List<MainImageScriptHouseTypes> allCards = new List<MainImageScriptHouseTypes>();
+
     private int[] Randomiser(int[] locations)
     {
         int[] array = locations.Clone() as int[];
@@ -66,12 +68,34 @@ public class GameControllerScriptHouseTypes : MonoBehaviour
                 float positionY = (Yspace * j) + startPosition.y;
 
                 gameImage.transform.position = new Vector3(positionX, positionY, startPosition.z);
+
+                allCards.Add(gameImage); // Add card to the list
             }
         }
+
+        StartCoroutine(ShowCardsTemporarily()); // Start coroutine to show cards temporarily
         victoryImage.gameObject.SetActive(false); //New change for images for victory
         //victoryText.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(true);  // Show 'back' button
+    }
+
+    private IEnumerator ShowCardsTemporarily()
+    {
+        // Show all cards
+        foreach (var card in allCards)
+        {
+            card.Open();
+        }
+
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3);
+
+        // Hide all cards
+        foreach (var card in allCards)
+        {
+            card.Close();
+        }
     }
 
     private MainImageScriptHouseTypes firstOpen;
@@ -132,6 +156,7 @@ public class GameControllerScriptHouseTypes : MonoBehaviour
         firstOpen = null;
         secondOpen = null;
     }
+
     public void LoadNextLevel()
     {
         MusicManager.Instance.StopVictoryMusic();

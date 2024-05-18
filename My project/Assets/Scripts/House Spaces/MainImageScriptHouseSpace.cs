@@ -36,4 +36,8 @@ public class MainImageScriptHouseSpace: MonoBehaviour
     {
         image_unknown.SetActive(true); //Hide Image
     }
+    public void Open()
+    {
+        image_unknown.SetActive(false); // Show Image
+    }
 }

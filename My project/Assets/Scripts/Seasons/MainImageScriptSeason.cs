@@ -36,5 +36,9 @@ public class MainImageScriptSeasons : MonoBehaviour
     {
         image_unknown.SetActive(true); //Hide Image
     }
+    public void Open()
+    {
+        image_unknown.SetActive(false); // Show Image
+    }
 }
 

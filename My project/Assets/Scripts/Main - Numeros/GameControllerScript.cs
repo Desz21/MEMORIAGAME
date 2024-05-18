@@ -15,10 +15,14 @@ public class GameControllerScript : MonoBehaviour
     public const float Yspace = -3f;
 
     [SerializeField] private Image victoryImage;
+    //public TextMeshProUGUI victoryText;
+
     [SerializeField] private MainImageScript startObject;
     [SerializeField] private Sprite[] images;
     [SerializeField] private Button nextButton;  // Reference to the 'next' button
     [SerializeField] private Button mainMenuButton;  // Reference to the 'back' button
+
+    private List<MainImageScript> allCards = new List<MainImageScript>();
 
     private int[] Randomiser(int[] locations)
     {
@@ -63,10 +67,33 @@ public class GameControllerScript : MonoBehaviour
                 float positionY = (Yspace * j) + startPosition.y;
 
                 gameImage.transform.position = new Vector3(positionX, positionY, startPosition.z);
+
+                allCards.Add(gameImage); // Add card to the list
             }
         }
+
+        StartCoroutine(ShowCardsTemporarily()); // Start coroutine to show cards temporarily
         victoryImage.gameObject.SetActive(false); //New change for images for victory
+        //victoryText.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowCardsTemporarily()
+    {
+        // Show all cards
+        foreach (var card in allCards)
+        {
+            card.Open();
+        }
+
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3);
+
+        // Hide all cards
+        foreach (var card in allCards)
+        {
+            card.Close();
+        }
     }
 
     private MainImageScript firstOpen;
@@ -137,6 +164,8 @@ public class GameControllerScript : MonoBehaviour
 
     //public void LoadPreviousLevel()
     //{
+    //    MusicManager.Instance.StopVictoryMusic();
+    //    MusicManager.Instance.ResumeBackgroundMusic();
     //    SceneManager.LoadScene(); // Change to the actual name of your previous level scene
     //}
 
