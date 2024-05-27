@@ -12,8 +12,8 @@ public class LoadLevels2 : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        //MusicManager.Instance.StopVictoryMusic();
-        //MusicManager.Instance.ResumeBackgroundMusic();
+        MusicManager.Instance.StopVictoryMusic();
+        MusicManager.Instance.ResumeBackgroundMusic();
         SceneManager.LoadScene(15); // Change to the actual name of your next level scene
     }
 

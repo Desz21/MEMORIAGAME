@@ -161,7 +161,7 @@ public class GameControllerScriptDaysOfTheWeek : MonoBehaviour
     {
         MusicManager.Instance.StopVictoryMusic();
         MusicManager.Instance.ResumeBackgroundMusic();
-        SceneManager.LoadScene(12); // Change to the actual name of your next level scene
+        SceneManager.LoadScene(13); // Change to the actual name of your next level scene
     }
 
     public void LoadPreviousLevel()

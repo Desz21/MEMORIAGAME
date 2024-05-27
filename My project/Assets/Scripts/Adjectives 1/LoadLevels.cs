@@ -12,17 +12,10 @@ public class LoadLevels1 : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        //MusicManager.Instance.StopVictoryMusic();
-        //MusicManager.Instance.ResumeBackgroundMusic();
-        SceneManager.LoadScene(14); // Change to the actual name of your next level scene
-    }
-
-    /*public void LoadPreviousLevel()
-    {
         MusicManager.Instance.StopVictoryMusic();
         MusicManager.Instance.ResumeBackgroundMusic();
-        SceneManager.LoadScene(5); // Change to the actual name of your previous level scene
-    }*/
+        SceneManager.LoadScene(14); // Change to the actual name of your next level scene
+    }
 
     public void ReturnToMainMenu()
     {
