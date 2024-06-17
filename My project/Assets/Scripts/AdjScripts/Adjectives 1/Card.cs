@@ -19,11 +19,12 @@ public class Card : MonoBehaviour
         {
             // Si la carta es la correcta, llama a la función para mostrar la pantalla de victoria.
             GameControl.Instance.ShowVictoryScreen();
+            MusicManager.Instance.PlayVictoryMusic();
         }
         else
         {
-            // Aquí puedes manejar lo que sucede cuando se selecciona la carta incorrecta.
-            // Por ejemplo, podrías mostrar un mensaje de error o realizar alguna animación.
+            MusicManager.Instance.PlayWrongSoundEffect();
+            GameControl.Instance.IncreaseMistakeCount();
         }
     }
 }

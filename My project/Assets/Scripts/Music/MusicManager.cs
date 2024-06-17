@@ -7,6 +7,7 @@ public class MusicManager : MonoBehaviour
 
     public AudioSource backgroundMusicSource;  // Assign in the Inspector
     public AudioSource victoryMusicSource;  // Assign in the Inspector
+    public AudioSource WrongSoundEffect; //Assign in the inspector
 
     void Awake()
     {
@@ -44,7 +45,11 @@ public class MusicManager : MonoBehaviour
             backgroundMusicSource.UnPause();  // Resume the background music
         }
     }
-}
 
+    public void PlayWrongSoundEffect()
+    {
+        WrongSoundEffect.Play();
+    }
+}
 
 
